@@ -1,0 +1,8 @@
+http://php.net/manual/en/features.commandline.webserver.php
+
+
+php -h 
+php -S localhost:3000
+
+<?php echo 'if you want to serve PHP code in XHTML or XML documents,
+                use these tags'; ?>
