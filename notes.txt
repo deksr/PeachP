@@ -6,3 +6,6 @@ php -S localhost:3000
 
 <?php echo 'if you want to serve PHP code in XHTML or XML documents,
                 use these tags'; ?>
+
+
+htmlspecialchars() makes sure any characters that are special in html are properly encoded so people can't inject HTML tags or Javascript into your page
