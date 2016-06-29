@@ -193,6 +193,50 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<!-- 
+ -->
+
+
+ <?php
+
+// Strip unnecessary characters (extra space, tab, newline) from the user input data (with the PHP trim() function)
+//Remove backslashes (\) from the user input data (with the PHP stripslashes() function and htmlspecialchars() for xss attacks. example below:
+// define variables and set to empty values
+
+$name = $email = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $website = test_input($_POST["website"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+//checks if the $_POST variable is empty (with the PHP empty() function).
+?>
+
+
+Date functions:
+<?php
+echo "Today is " . date("Y/m/d") . "<br>";
+echo date("h:i:sa");
+?>
+
+
+<h3>include includes the file</h3>
+<?php include 'footer.php';?>
+
+you can even call the variables present in the include file into this file.
+<?php include 'footer.php';
+echo "buy some $plantname and $flowername "
+?>
+
 
  </body>
 

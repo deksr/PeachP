@@ -10,6 +10,11 @@ php -S localhost:3000
 
 htmlspecialchars() makes sure any characters that are special in html are properly encoded so people can't inject HTML tags or Javascript into your page
 
+htmlspecialchars()
+stripslashes() 
+trim()
+empty()
 
 
-
+difference in include and require?
+http://stackoverflow.com/questions/3633900/difference-between-include-and-require-in-php
