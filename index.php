@@ -109,6 +109,30 @@ for ($i=0; $i < count($fruitbasket); $i++) {
 
 ?>
 
+<?php
+//global variable
+$x = 75; 
+$y = 25;
+function sum(){
+	$GLOBALS['z'] = $GLOBALS['x'] + $GLOBALS['y'];
+}
+
+sum();
+echo $z; 
+
+//in javascript:
+// var x = 75;
+// var y = 25;
+// var z;
+
+// function sum(){
+//  z = x + y
+// }
+
+// sum()
+?>
+
+
 
 
 
