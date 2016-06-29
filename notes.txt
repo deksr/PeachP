@@ -9,3 +9,7 @@ php -S localhost:3000
 
 
 htmlspecialchars() makes sure any characters that are special in html are properly encoded so people can't inject HTML tags or Javascript into your page
+
+
+
+

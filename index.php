@@ -45,6 +45,7 @@ you are not using Internet Explorer
 
 <hr>
 
+<h3>This us a post form </h3>
 <!-- this will return not found on server-->
 <form action ="jupiter.php" method="post">
 	<p>Planet name: <input name="planetname" /></p>
@@ -72,6 +73,20 @@ $expression = true
 <?php else: ?>
   Otherwise this will show.
 <?php endif; ?>
+
+<br>
+<hr>
+
+<h3>This is a GET form. GET may be used for sending non-sensitive data.
+ </h3><br>
+<form action ="mars.php" method="get">
+	<p>Name: <input name="personname" /></p>
+	<p>Age: <input name="personage" /></p>
+	<input type="submit" value="Submit">
+</form>
+
+
+
 
 <br>
 <hr>
@@ -110,7 +125,7 @@ for ($i=0; $i < count($fruitbasket); $i++) {
 ?>
 
 <?php
-//global variable
+//global variables. 
 $x = 75; 
 $y = 25;
 function sum(){
@@ -132,10 +147,51 @@ echo $z;
 // sum()
 ?>
 
+<hr>
+<h3> using $_REQUEST global. The $_SERVER["PHP_SELF"] is a super global variable that returns the filename of the currently executing script.
+</h3> <br>
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: <input name="firstname">
+  <input type="submit">
+</form>
 
 
+<?php
 
+//http://stackoverflow.com/questions/107683/when-and-why-should-request-be-used-instead-of-get-post-cookie
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+    $name = $_REQUEST['firstname'];
+    if (empty($name)) {
+        echo "Name is empty";
+    } else {
+        echo $name;
+    }
+}
+?>
 
+<hr>
+
+<h3> using $_POST global</h3><br>
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  Name: <input name="firstname">
+  <input type="submit">
+</form>
+
+<?php
+
+//PHP $_POST is widely used to collect form data after submitting an HTML form with method="post". $_POST is also widely used to pass variables.
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+    $name = $_POST['fname'];
+    if (empty($name)) {
+        echo "Name is empty";
+    } else {
+        echo $name;
+    }
+}
+?>
 
 
  </body>
